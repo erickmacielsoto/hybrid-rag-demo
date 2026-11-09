@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "fastapi-docs": {
+      "command": "/absolute/path/to/.venv/bin/hybrid-rag-mcp",
+      "args": ["--index", "/absolute/path/to/hybrid-rag-demo/index", "--device", "cpu"]
+    }
+  }
+}

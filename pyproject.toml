@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hybrid-rag-demo"
+version = "0.1.0"
+description = "Hybrid retrieval (BM25 + dense embeddings + cross-encoder reranking) over the FastAPI docs, with cited answers, a measured eval and an MCP server."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Erick Maciel Soto" }]
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26", "pydantic>=2.7", "mcp>=2.3"]
+
+[project.optional-dependencies]
+models = ["sentence-transformers>=3.0", "torch>=2.2"]
+generate = ["transformers>=4.45", "accelerate>=0.30"]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "anyio>=4", "mypy>=1.10", "ruff>=0.5"]
+
+[project.scripts]
+hybrid-rag = "hybrid_rag.cli:main"
+hybrid-rag-mcp = "hybrid_rag.mcp_server:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = ["torch.*", "transformers.*", "trl.*", "peft.*", "bitsandbytes.*", "datasets.*", "sentence_transformers.*"]
+follow_imports = "skip"

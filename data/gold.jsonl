@@ -1,0 +1,69 @@
+{"id": "q001", "question": "How can I make a query parameter optional without giving it a default value?", "relevant": ["tutorial/query-params.md#optional-parameters"]}
+{"id": "q002", "question": "What does the API return if a path parameter typed as int receives the string 'foo'?", "relevant": ["tutorial/path-params.md#data-validation"]}
+{"id": "q003", "question": "How do I restrict a path parameter to a fixed set of allowed values?", "relevant": ["tutorial/path-params.md#predefined-values"]}
+{"id": "q004", "question": "How do I capture a URL segment that itself contains slashes, like a file path?", "relevant": ["tutorial/path-params.md#path-parameters-containing-paths"]}
+{"id": "q005", "question": "Why does /users/me need to be declared before /users/{user_id}?", "relevant": ["tutorial/path-params.md#order-matters"]}
+{"id": "q006", "question": "How do I limit the maximum length of a string query parameter?", "relevant": ["tutorial/query-params-str-validations.md#additional-validation"]}
+{"id": "q007", "question": "How can one query parameter receive several values, like ?q=foo&q=bar?", "relevant": ["tutorial/query-params-str-validations.md#query-parameter-list-multiple-values"]}
+{"id": "q008", "question": "How do I show a parameter as deprecated in the generated docs without removing it?", "relevant": ["tutorial/query-params-str-validations.md#deprecating-parameters"]}
+{"id": "q009", "question": "How do I validate that a numeric path value is above zero and at most 1000?", "relevant": ["tutorial/path-params-numeric-validations.md#number-validations-greater-than-and-less-than-or-equal"]}
+{"id": "q010", "question": "How do I return a 404 with a custom error message when an item does not exist?", "relevant": ["tutorial/handling-errors.md#use-httpexception"]}
+{"id": "q011", "question": "Can I attach custom headers to an error response raised from my endpoint?", "relevant": ["tutorial/handling-errors.md#add-custom-headers"]}
+{"id": "q012", "question": "How do I change the body returned when the request data fails validation?", "relevant": ["tutorial/handling-errors.md#override-request-validation-exceptions"]}
+{"id": "q013", "question": "How do I make sure a user's password is never sent back in the response?", "relevant": ["tutorial/response-model.md#add-an-output-model"]}
+{"id": "q014", "question": "How can I leave out fields that were never set when returning a model?", "relevant": ["tutorial/response-model.md#use-the-response-model-exclude-unset-parameter"]}
+{"id": "q015", "question": "How do I declare that an endpoint answers with HTTP 201 Created?", "relevant": ["tutorial/response-status-code.md#response-status-code"]}
+{"id": "q016", "question": "How do I receive username and password as form fields instead of JSON?", "relevant": ["tutorial/request-forms.md#define-form-parameters"]}
+{"id": "q017", "question": "How do I get the original filename and content type of an uploaded file?", "relevant": ["tutorial/request-files.md#uploadfile"]}
+{"id": "q018", "question": "My JavaScript frontend on another domain cannot call my API. How do I allow it?", "relevant": ["tutorial/cors.md#use-corsmiddleware"]}
+{"id": "q019", "question": "In CORS terms, what exactly counts as an origin?", "relevant": ["tutorial/cors.md#origin"]}
+{"id": "q020", "question": "How do I send a notification email after the response has already been returned?", "relevant": ["tutorial/background-tasks.md#using-backgroundtasks"]}
+{"id": "q021", "question": "How do I write a middleware that adds the processing time as a response header?", "relevant": ["tutorial/middleware.md#before-and-after-the-response"]}
+{"id": "q022", "question": "How do I split my endpoints across several modules in a large project?", "relevant": ["tutorial/bigger-applications.md#apirouter"]}
+{"id": "q023", "question": "How do I give every route of a router the same prefix, tags and dependencies?", "relevant": ["tutorial/bigger-applications.md#include-an-apirouter-with-a-custom-prefix-tags-responses-and-dependencies"]}
+{"id": "q024", "question": "How do I write tests for my endpoints with pytest?", "relevant": ["tutorial/testing.md#using-testclient"]}
+{"id": "q025", "question": "How do I swap a real dependency for a fake one while testing?", "relevant": ["advanced/testing-dependencies.md#use-the-app-dependency-overrides-attribute"]}
+{"id": "q026", "question": "How can I test a websocket endpoint?", "relevant": ["advanced/testing-websockets.md#testing-websockets"]}
+{"id": "q027", "question": "How do I close a database session after the response is sent, from inside a dependency?", "relevant": ["tutorial/dependencies/dependencies-with-yield.md#a-database-dependency-with-yield"]}
+{"id": "q028", "question": "Can a Python class be used as a dependency instead of a function?", "relevant": ["tutorial/dependencies/classes-as-dependencies.md#classes-as-dependencies_1"]}
+{"id": "q029", "question": "How do I apply one dependency to every endpoint of the whole application?", "relevant": ["tutorial/dependencies/global-dependencies.md#global-dependencies"]}
+{"id": "q030", "question": "How do I run a dependency whose return value my endpoint does not need?", "relevant": ["tutorial/dependencies/dependencies-in-path-operation-decorators.md#add-dependencies-to-the-path-operation-decorator"]}
+{"id": "q031", "question": "If two sub-dependencies need the same dependency, is it executed twice per request?", "relevant": ["tutorial/dependencies/sub-dependencies.md#using-the-same-dependency-multiple-times"]}
+{"id": "q032", "question": "How do I implement a login endpoint that returns a bearer token from username and password?", "relevant": ["tutorial/security/simple-oauth2.md#return-the-token"]}
+{"id": "q033", "question": "Which library and algorithm does the tutorial recommend for hashing passwords?", "relevant": ["tutorial/security/oauth2-jwt.md#install-pwdlib"]}
+{"id": "q034", "question": "How do I create signed JWT access tokens with an expiration?", "relevant": ["tutorial/security/oauth2-jwt.md#handle-jwt-tokens"]}
+{"id": "q035", "question": "How do I obtain the logged-in user object inside my endpoint from the token?", "relevant": ["tutorial/security/get-current-user.md#inject-the-current-user"]}
+{"id": "q036", "question": "Should my endpoint functions be declared with async def or plain def?", "relevant": ["async.md#in-a-hurry"]}
+{"id": "q037", "question": "What happens when I declare a path operation with normal def instead of async def?", "relevant": ["async.md#path-operation-functions"]}
+{"id": "q038", "question": "How do I load configuration from environment variables with Pydantic?", "relevant": ["advanced/settings.md#pydantic-settings"]}
+{"id": "q039", "question": "How can I avoid re-reading the .env file on every request?", "relevant": ["advanced/settings.md#creating-the-settings-only-once-with-lru-cache"]}
+{"id": "q040", "question": "How do I load a machine learning model once at startup and release it at shutdown?", "relevant": ["advanced/events.md#lifespan"]}
+{"id": "q041", "question": "How do I return an HTML page directly from an endpoint?", "relevant": ["advanced/custom-response.md#htmlresponse"]}
+{"id": "q042", "question": "How do I stream a large video file to the client?", "relevant": ["advanced/custom-response.md#streamingresponse"]}
+{"id": "q043", "question": "How do I redirect the client to a different URL?", "relevant": ["advanced/custom-response.md#redirectresponse"]}
+{"id": "q044", "question": "How do I set a cookie on the response?", "relevant": ["advanced/response-cookies.md#use-a-response-parameter"]}
+{"id": "q045", "question": "How can I add custom headers to a successful response?", "relevant": ["advanced/response-headers.md#use-a-response-parameter"]}
+{"id": "q046", "question": "How do I return 201 when an item was created but 200 when it already existed?", "relevant": ["advanced/response-change-status-code.md#use-a-response-parameter"]}
+{"id": "q047", "question": "Besides the main status code, how can an endpoint return other status codes with JSON?", "relevant": ["advanced/additional-status-codes.md#additional-status-codes_1"]}
+{"id": "q048", "question": "Can I mount an existing Flask application inside a FastAPI app?", "relevant": ["advanced/wsgi.md#using-wsgimiddleware"]}
+{"id": "q049", "question": "How do I mount a separate app under /subapi with its own docs UI?", "relevant": ["advanced/sub-applications.md#mounting-a-fastapi-application"]}
+{"id": "q050", "question": "My app sits behind a proxy that strips an /api/v1 prefix and the docs fail to load. What do I configure?", "relevant": ["advanced/behind-a-proxy.md#proxy-with-a-stripped-path-prefix"]}
+{"id": "q051", "question": "How do I render pages with Jinja2 templates?", "relevant": ["advanced/templates.md#using-jinja2templates"]}
+{"id": "q052", "question": "How do I create a websocket endpoint?", "relevant": ["advanced/websockets.md#create-a-websocket"]}
+{"id": "q053", "question": "How do I serve images and CSS files from a folder?", "relevant": ["tutorial/static-files.md#use-staticfiles"]}
+{"id": "q054", "question": "What should a Dockerfile for a FastAPI app look like?", "relevant": ["deployment/docker.md#dockerfile"]}
+{"id": "q055", "question": "How do I run several worker processes to use all CPU cores?", "relevant": ["deployment/server-workers.md#multiple-workers"]}
+{"id": "q056", "question": "Why should I pin the FastAPI version in my requirements?", "relevant": ["deployment/versions.md#pin-your-fastapi-version"]}
+{"id": "q057", "question": "How can one server on a single IP address serve HTTPS certificates for several domains?", "relevant": ["deployment/https.md#tls-with-sni-extension"]}
+{"id": "q058", "question": "How do I start the server manually for production without the dev reloader?", "relevant": ["deployment/manually.md#use-the-fastapi-run-command"]}
+{"id": "q059", "question": "How can I disable the OpenAPI docs in production through a setting?", "relevant": ["how-to/conditional-openapi.md#conditional-openapi-from-settings-and-env-vars"]}
+{"id": "q060", "question": "How do I change the syntax highlighting theme of Swagger UI?", "relevant": ["how-to/configure-swagger-ui.md#change-the-theme"]}
+{"id": "q061", "question": "How do I set the title, description and version shown in the API docs?", "relevant": ["tutorial/metadata.md#metadata-for-api"]}
+{"id": "q062", "question": "How do I add example values to the JSON schema of a request model?", "relevant": ["tutorial/schema-extra-example.md#extra-json-schema-data-in-pydantic-models"]}
+{"id": "q063", "question": "How do I convert a model containing datetime into something json.dumps accepts?", "relevant": ["tutorial/encoder.md#using-the-jsonable-encoder"]}
+{"id": "q064", "question": "How do I update only some fields of an item with PATCH?", "relevant": ["tutorial/body-updates.md#partial-updates-with-patch"]}
+{"id": "q065", "question": "Can parameters be typed as UUID or datetime?", "relevant": ["tutorial/extra-data-types.md#other-data-types"]}
+{"id": "q066", "question": "Why does a header declared as user_agent match the User-Agent header?", "relevant": ["tutorial/header-params.md#automatic-conversion"]}
+{"id": "q067", "question": "How do I store data in a SQL database using SQLModel?", "relevant": ["tutorial/sql-databases.md#create-models"]}
+{"id": "q068", "question": "How do I make every endpoint use a different response class by default?", "relevant": ["advanced/custom-response.md#default-response-class"]}
+{"id": "q069", "question": "How do I generate a TypeScript client SDK from my API's OpenAPI schema?", "relevant": ["advanced/generate-clients.md#create-a-typescript-sdk"]}
