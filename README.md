@@ -17,23 +17,23 @@ each stage on 69 real questions.
 ```mermaid
 flowchart TB
     subgraph Ingest
-        D[/FastAPI docs<br/>125 Markdown files, pinned commit/] --> C[Heading-aware chunker<br/>section anchors + heading path<br/>220-word windows, 40 overlap]
-        C --> CH[(1,169 chunks<br/>1,104 sections)]
-        CH --> E[bge-small-en-v1.5<br/>normalised embeddings]
-        CH --> B[BM25 index]
+        D[/"FastAPI docs<br/>125 Markdown files, pinned commit"/] --> C["Heading-aware chunker<br/>section anchors + heading path<br/>220-word windows, 40 overlap"]
+        C --> CH[("1,169 chunks<br/>1,104 sections")]
+        CH --> E["bge-small-en-v1.5<br/>normalised embeddings"]
+        CH --> B["BM25 index"]
     end
     subgraph Query
-        Q[question] --> B2[BM25 top-50]
-        Q --> E2[dense top-50<br/>cosine]
-        B2 & E2 --> F[Reciprocal Rank Fusion k=60]
-        F --> RR[cross-encoder<br/>ms-marco-MiniLM-L6-v2<br/>re-ranks top-30 sections]
-        RR --> K[top-k distinct sections]
+        Q["question"] --> B2["BM25 top-50"]
+        Q --> E2["dense top-50<br/>cosine"]
+        B2 & E2 --> F["Reciprocal Rank Fusion k=60"]
+        F --> RR["cross-encoder<br/>ms-marco-MiniLM-L6-v2<br/>re-ranks top-30 sections"]
+        RR --> K["top-k distinct sections"]
     end
     B -.-> B2
     E -.-> E2
-    K --> A[cited answer<br/>file § section]
-    K --> M[MCP tools<br/>search_docs · get_section · answer_question]
-    A --> G[optional local LLM<br/>Qwen2.5-1.5B-Instruct]
+    K --> A["cited answer<br/>file § section"]
+    K --> M["MCP tools<br/>search_docs · get_section · answer_question"]
+    A --> G["optional local LLM<br/>Qwen2.5-1.5B-Instruct"]
 ```
 
 * **Chunking** (`chunking.py`): split on Markdown headings outside code fences, keep FastAPI's explicit
